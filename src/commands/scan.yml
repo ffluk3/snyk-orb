@@ -88,7 +88,7 @@ steps:
         SNYK_INTEGRATION_NAME: CIRCLECI_ORB
         SNYK_INTEGRATION_VERSION: REPLACE_ORB_VERSION
       command: |
-        if [[ ! -x "/usr/local/bin/snyk" ]]; then
+        if [[ ! -x "/tmp/snyk" ]]; then
           if [[ "<<parameters.os>>" == "alpine" && "<<parameters.install-alpine-dependencies>>" == "true" ]]; then
             apk add -q --no-progress --no-cache curl wget libstdc++ sudo
           fi
